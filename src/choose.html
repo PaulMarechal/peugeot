@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<body lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="chooseBody">
+        <div id="knowMore" class="pageDiv">
+            <a id="com1" onclick="dataLayer.push({ 'Configure': 'btn-Configure-clicked'})" href="https://www.dsautomobiles.fr/modeles-ds/ds-4/configurateur/Version.html" style="background-image:url('assets/fr/com/configure_v2.jpg')"></a>
+            <a id="com2" onclick="dataLayer.push({ 'Brochure': 'btn-Brochure-clicked'})" href="https://media.dspp.awsmpsa.com/file/74/6/BROCHURE-DS-4.pdf" style="background-image:url('assets/fr/com/Brochure2.jpg')"></a>
+            <a id="com3" onclick="dataLayer.push({ 'Test-Drive': 'btn-Test-Drive-clicked'})" href="https://www.dsautomobiles.fr/contact/demandez-un-essai.html" style="background-image:url('assets/fr/com/TestDrive_V2.jpg')"></a>
+        </div> 
+        <script>
+            dataLayer = [];
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MKBV9ZH');</script>
+        <!-- End Google Tag Manager -->
+        
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKBV9ZH"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+             
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-31TSN7K0ZY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-31TSN7K0ZY');
+
+            const isEsp = () => {
+                if (navigator.languages[0].toLowerCase() === 'es-es') 
+                    return true;
+                return false;
+            }
+
+            const setLanguage = () => {
+                const language = navigator.languages[0].toLowerCase().split('-');
+
+                switch (language[0]) {
+                    case 'en':
+                        if (language[0] === 'en')
+                            return 'en';
+                    case 'fr':
+                        if (language[0] === 'fr')
+                            return 'fr';
+                    case 'es':
+                        if (language[0] === 'es')
+                            return 'es';
+					case 'el':
+                        if (language[0] === 'el')
+                            return 'el';
+                    default:
+                        return 'en';
+                }
+            }
+
+            const translateEs = () => {
+                const language = setLanguage();
+
+                let com1 = document.querySelector('#com1');
+                let com2 = document.querySelector('#com2');
+                let com3 = document.querySelector('#com3');
+
+                let changCom1 = com1.style.backgroundImage.replace(/fr/, language);
+                let changCom2 = com2.style.backgroundImage.replace(/fr/, language);
+                let changCom3 = com3.style.backgroundImage.replace(/fr/, language);
+
+                com1.style.backgroundImage = changCom1;
+                com2.style.backgroundImage = changCom2;
+                com3.style.backgroundImage = changCom3;
+
+                if (language === 'es') {
+                    com1.href = "https://www.dsautomobiles.es/modelos/ds-4/configurador/versiones.html";
+                    com2.href = "https://www.pruebesuds.es/catalogos/CT_DS4.pdf";
+                    com3.href = "https://www.dsautomobiles.es/encuentre-su-concesionario.html";
+                } else if (language === 'fr') {
+                    com1.href = "https://www.dsautomobiles.fr/modeles-ds/ds-4/configurateur/Version.html";
+                    com2.href = "https://media.dspp.awsmpsa.com/file/74/6/BROCHURE-DS-4.pdf";
+                    com3.href = "https://www.dsautomobiles.fr/contact/demandez-un-essai.html";
+                } else if (language === 'en') {
+                    com1.href = "https://www.dsautomobiles.co.uk/ds-store/configurator";
+                    com2.href = "https://www.dsautomobiles.co.uk/ds-brochures-and-price-lists";
+                    com3.href = "https://forms.dsautomobiles.co.uk/ds/test-drive?&_ga=2.107661056.322930098.1629723985-321962218.1629723985";
+				} else if (language === 'el') {
+                    com1.href = "https://configurator.dsautomobiles.gr/ds-4/ds-4/%CE%95%CE%9A%CE%94%CE%9F%CE%A3%CE%95%CE%99%CE%A3.html";
+                    com2.href = "https://www.dsautomobiles.gr/vehicle/ds-4/presentation/";
+                    com3.href = "https://www.dsautomobiles.gr/test-drive/?carid=22460";
+				}
+            }          
+            document.onload = translateEs();
+        </script>
+    </body>
+</html>

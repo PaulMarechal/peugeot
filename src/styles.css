@@ -1,0 +1,813 @@
+@font-face {
+    font-family: "DsBold";
+    src: url('./assets/fonts/DSAutomobiles-Bold.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "DsItalic";
+    src: url('./assets/fonts/DSAutomobiles-Italic.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "DsRegular";
+    src: url('./assets/fonts/DSAutomobiles-Regular.otf') format("opentype");
+}
+
+html, body {
+    margin: 0;
+    background-color: #1B1B1B;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'DsBold', sans-serif;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.none {
+    display: none !important;
+    pointer-events: none;
+}
+
+#redirect-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#redirect-wrapper #redirect-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70%;
+    padding: 2em;
+}
+
+#redirect-wrapper #redirect-popup .cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#redirect-wrapper #redirect-popup .cta img {
+    width: 50px;
+    margin: 1em 0;
+}
+
+#redirect-wrapper #redirect-popup #redirect-copy-link {
+    cursor: pointer;
+    width: 80%;
+    max-width: 288px;
+    padding: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #a49485;
+    color: #ffffff;
+    font-family: 'DsBold', sans-serif;
+    text-transform: uppercase;
+}
+
+.onboardingscreen, #linkhub, #ar-tutorial {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.onboardingscreen, #ar-tutorial {
+    padding: 40px 0;
+}
+
+.onboardingscreen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.onboardingscreen.onboarding-en {
+    background-image: url("assets/en/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-fr {
+    background-image: url("assets/fr/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-es {
+    background-image: url("assets/es/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-el {
+    background-image: url("assets/el/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-tr {
+    background-image: url("assets/tr/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-it {
+    background-image: url("assets/it/backgrounds/Splash_V2.jpg");
+}
+.onboardingscreen.onboarding-de {
+    background-image: url("assets/de/backgrounds/Splash_V2.jpg");
+}
+
+#linkhub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#linkhub #configure-link {
+    background-image: url("assets/images/Configure.jpg");
+}
+
+#linkhub #brochure-link {
+    background-image: url("assets/images/Brochure.jpg");
+    background-position: 17% 30%;
+}
+
+#linkhub #test-drive-link {
+    background-image: url("assets/images/TestDrive.jpg");
+}
+
+#linkhub #ar-view-link {
+    background-image: url("assets/images/AR.jpg");
+    background-position: center top;
+}
+
+#linkhub .hub-link {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: 'DsItalic', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 24px;
+}
+
+#linkhub .hub-link span {
+    font-family: 'DsBold', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+#linkhub .hub-link span img {
+    max-width: 50px;
+    margin-right: 0.5em;
+}
+
+#linkhub .hub-link.separator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -2px);
+    width: 40%;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+#linkhub .hub-link .bold {
+    font-family: 'DsBold', sans-serif;
+}
+
+#ar-tutorial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("assets/background/fondUserGuide.jpg");
+    color: #ffffff;
+}
+
+#ar-tutorial #tutorial-title {
+    text-transform: uppercase;
+    font-size: 33px;
+    margin-top: 0;
+    text-align: center;
+}
+
+#ar-tutorial #tutorial-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#ar-tutorial #tutorial-content .tutorial-part {
+    /* width: 100%; */
+    width: calc(300px - 2em);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    background-color: #2B3036;
+    color: #ffffff;
+    font-family: 'DsItalic', sans-serif;
+    border-radius: 8px;
+    transition: opacity 1s;
+}
+
+#ar-tutorial #tutorial-content .tutorial-part.hidden-part {
+    opacity: 0;
+}
+
+#ar-tutorial #tutorial-content .tutorial-part .tutorial-gif {
+    width: 60px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+#ar-tutorial #tutorial-content .tutorial-part .tutorial-text {
+    margin: 10px;
+    font-size: 14px;
+}
+
+
+
+/*
+#onBoarding, #tutorial, #knowMore {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: hidden;
+}
+
+#containerMask {
+    display: flex;
+    position: absolute;
+    top: -50px;
+}
+
+#textLinkBox {
+    width: 80%;
+    background: white;
+    border: none;
+    color: white;
+    user-select: none;
+    position: absolute;
+    left: 10%;
+    z-index: -1;
+}
+
+#mask {
+    width: 80%;
+    background: white;
+    color: white;
+    min-width: 260px;
+}
+
+.containerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.containerInfo label {
+    margin-right: 10px;
+    font-family: system-ui;
+}
+
+.js-test-textarea {
+    display: none;
+}
+
+.containerCopy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#execCopy {
+    max-width: 288px;
+    width: 80%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #a49485;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#textLinkBox:focus, #textLinkBox:active, #textLinkBox:visited, #textLinkBox:focus-visible,  #textLinkBox:focus-within, #textLinkBox:hover {
+    outline: none!important;
+    background: white!important;
+    border: none!important;
+    color: white!important;
+}
+
+#onBoarding { 
+    background-color: #000;
+    background-image: url("assets/en/backgrounds/Splash_V2.jpg");
+}
+
+#tutorial {
+    background-image: url("assets/background/fondUserGuide.jpg");
+    display: none;
+    background-color: #1B1B1B;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#titleTutoUserGuide {
+    text-transform: uppercase;
+    font-size: 33px;
+    font-family: 'DsBold';
+    color: #fff;
+    margin-top: 0;
+    text-align: center;
+}
+
+.containerUserGuide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerStepGuide {
+    display: flex;
+    align-items: center;
+    background-color: #2B3036;
+    min-width: 90%;
+    color: #fff;
+    padding: 15px;
+    font-family: 'DsItalic';
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.animStepGuide {
+    opacity: 0;
+    transition: 1s;
+}
+
+.animComplete {
+    opacity: 100%;
+}
+
+.animStepGuide2 {
+    opacity: 0;
+    transition: 1s;
+}
+
+.animComplete2 {
+    opacity: 100%;
+}
+
+.containerStepGuide p {
+    margin: 10px;
+    font-size: 14px;
+}
+
+.imgGif {
+    width: 60px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.esBg {
+    background-image: url("assets/es/backgrounds/Onboarding_V5.jpg")!important;
+}
+
+.enBg {
+    background-image: url("assets/en/backgrounds/Onboarding_V5.jpg")!important;
+}
+
+.frBg {
+    background-image: url("assets/fr/backgrounds/Onboarding_V5.jpg")!important;
+}
+
+.enSplashBg {
+    background-image: url("assets/en/backgrounds/Splash_V2.jpg") !important;
+}
+
+.esSplashBg {
+    background-image: url("assets/es/backgrounds/Splash_V2.jpg") !important;
+}
+
+.frSplashBg {
+    background-image: url("assets/fr/backgrounds/Splash_V2.jpg") !important;
+}
+
+.elSplashBg {
+    background-image: url("assets/el/backgrounds/Splash_V2.jpg") !important;
+}
+
+#knowMore {
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#knowMore a {
+    display: flex;
+    height: 32vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#knowMore img {
+    width: auto;
+    max-width: 100%;
+    height: 316px;
+}
+*/
+
+#modelViewer {
+    background-color: #eee;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    --poster-color: #eee;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in-out 500ms;
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    overflow-x: hidden;
+}
+
+/* #modelViewer button {
+    border: none;
+    height: max-content;
+    border: none;
+    background: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    width: 100%;
+}
+
+#modelViewer button img {
+    width: 20vh;
+    height: auto;
+    min-width: 200px;
+    max-width: 250px;
+} */
+
+#modelViewer .arBtn {
+    bottom: 75px;
+}
+
+#modelViewer #continueToKnowMore {
+    bottom: 15px;
+}
+
+#modelViewer .ios-button, #ar-button {
+    bottom: 15px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#modelViewer #ar-link {
+    display: flex;
+    justify-content: center;
+}
+
+.navButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 40px; */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navButton img, .ios-button img {
+    width: auto;
+    max-width: 300px;
+}
+/*
+#ios-custom-button {
+    border: 1px solid grey;
+    width: 200px;
+    background: red;
+    color: blue;
+    border-radius: 40px;
+    padding: 10px 20px;
+    height: 40px;
+    z-index: 1;
+    position: absolute;
+    bottom: 15px;
+}
+
+#ios-ar-icon {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+#discoverMore {
+    background: red;
+}
+
+model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+}
+
+model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+}
+
+.link {
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+RESPONSIVE
+
+@media (max-width: 1025px) { 
+
+}
+
+@media (max-width: 768px) { 
+    #knowMore img {
+        height: 316px;
+    }
+}
+
+@media (max-width: 539px) { 
+    #knowMore img {
+        height: 231px;
+    }
+}
+
+@media (max-width: 566px) { 
+
+}
+
+.chooseBody {
+    height: unset;
+}
+
+.none {
+    display: none !important;
+}
+*/
+#banner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #958270;
+    color: #ffffff;
+    font-family: 'DsRegular', sans-serif;
+    font-size: 1.3em;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+}
+/*
+.redirectPopup {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+.redirectPopup img {
+    width: 60px;
+    height: auto;
+}
+
+.redirectPopup a, .redirectPopup label {
+    text-align: center;
+}
+.disabledPage {
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+
+
+.fade-out-image {
+    animation: fadeOut 0.2s ease-out;
+    -webkit-animation: fadeOut 0.2s ease-out;
+    -moz-animation: fadeOut 0.2s ease-out;
+    -o-animation: fadeOut 0.2s ease-out;
+    -ms-animation: fadeOut 0.2s ease-out;
+}
+
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-moz-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-o-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-ms-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@media (max-width: 375px)
+    and (max-height: 812px) {
+        #titleTutoUserGuide {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .containerStepGuide {
+            padding: 10px 15px;
+        }
+    }
+
+   */
+
+@media all and (max-height: 570px) {
+    #onboarding {
+        padding: 20px 0;
+    }
+}
+
+
+@keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+}
+
+model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+}
+
+model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+}
+
+model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+}
+
+/* Buttons display others cars */
+model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+}
+
+.slider {
+    width: fit-content;
+    position: absolute;
+    top: 50%; 
+    right: 7px; 
+    transform: translateY(-50%); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+}
+
+.slides {
+    display: flex;
+    flex-direction: column; 
+    overflow-y: auto;
+    scroll-snap-type: y mandatory; 
+    text-align: center;
+    gap: 12px; 
+}
+
+.slide {
+    width: 10vh;
+    height: 10vh; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin: 0;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    cursor: pointer;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.slide.selected {
+    border: 2px solid #4285f4; 
+}
+
+.slide:focus {
+    outline: none;
+}
+
+.slide:focus-visible {
+    outline: 1px solid #4285f4;
+}
+
+model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+}
+
+/* AR Button */
+#ar-button {
+    background-repeat: no-repeat;
+    background-size: 170px 35px;
+    background-position: 12px 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 2vh;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: none;
+    background-color: transparent;
+}
+
+#ar-button img{width: 28vh;}

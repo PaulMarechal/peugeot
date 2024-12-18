@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class="bannerPageBody">
+        <div id="banner" class="pageDiv">
+            <img src="assets/en/buttons/More_info_buttone.png"/>
+        </div>
+        <script>
+            dataLayer = [];
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MKBV9ZH');</script>
+        <!-- End Google Tag Manager -->
+        
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKBV9ZH"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-31TSN7K0ZY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-31TSN7K0ZY');
+
+            const setLanguage = () => {
+                const language = navigator.languages[0].toLowerCase().split('-');
+    
+                switch (language[0]) {
+                    case 'en':
+                        if (language[0] === 'en')
+                            return 'en';
+                    case 'fr':
+                        if (language[0] === 'fr')
+                            return 'fr';
+                    case 'es':
+                        if (language[0] === 'es')
+                            return 'es';
+					
+                    default:
+                        return 'en';
+                }
+            }
+    
+            const translateEs = () => {
+    
+                const language = setLanguage();
+    
+                let banner = document.querySelector('#banner img');
+    
+                let bannerChange = banner.src.replace(/en/, language);
+    
+                banner.src = bannerChange;
+            }          
+            
+            document.onload = translateEs();
+        </script>
+
+    </body>
+</html>

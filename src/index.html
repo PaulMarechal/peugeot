@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>DS7 AR</title>
+  <link rel="icon" href="faviconds.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <script type="text/javascript" src="assets/config/config.en.js"></script>
+  <script type="text/javascript" src="assets/config/config.es.js"></script>
+  <script type="text/javascript" src="assets/config/config.fr.js"></script>
+  <script type="text/javascript" src="assets/config/config.tr.js"></script>
+  <script type="text/javascript" src="assets/config/config.it.js"></script>
+  <script type="text/javascript" src="assets/config/config.de.js"></script>
+  <script type="text/javascript" src="assets/config/config.el.js"></script>
+  <script language="javascript">
+    let lang;
+    let content;
+
+    const setLanguage = () => {
+        const language = navigator.languages[0].toLowerCase().split('-')[0];
+        const availableLangs = [`en`, `fr`, `es`, `el`, `tr`, `it`, `de`];
+
+        if (availableLangs.includes(language)) {
+          return language;
+        } else {
+          return `en`;
+        }
+    }
+
+    const setContent = () => {
+      lang = setLanguage();
+      const langConfigs = { en: configEn(), fr: configFr(), es: configEs(), el: configEl(), tr: configTr(), it: configIt(), de: configDe() };
+      const config = langConfigs[lang];
+
+      content = config;
+    }
+    setContent();
+  </script>
+</head>
+<body>
+  <div id="redirect-wrapper" class="hidden">
+    <div id="redirect-popup">
+      <div class="cta">
+        <span>Open the experience in Safari</span>
+        <img src="assets/logos/safari-icon.png" alt="safari-ios-icon" />
+      </div>
+      <button id="redirect-copy-link" onclick="copyToClipboard(window.location.href)">COPY THE LINK</button>
+    </div>
+  </div>
+  <div id="onboarding" class="onboardingscreen onboarding-en">
+    <button class="navButton" onclick="changeView(this.parentNode, `linkhub`, `DS7_OnboardingPassed`, `btn-Discover-More-clicked`)">
+      <img src="assets/en/buttons/start.png" alt="Start-the-experience" />
+    </button>
+  </div>
+  <div id="onboarding-ar" class=" onboardingscreen  onboarding-en hidden">
+    <button class="navButton"  onclick="changeView(this.parentNode, `ar-tutorial`, `DS7_ViewArTutorial`, `btn-Start-the-experience-clicked`)">
+      <img src="assets/en/buttons/start.png" alt="Start-the-experience" />
+    </button>
+  </div>
+  <div id="linkhub" class="hidden">
+    <a id="brochure-link"   onclick="gtag('event', 'DS7_Brochure',  { event_label: 'DS7_Brochure' })"     href="https://www.dsautomobiles.fr/outils/demandez-une-brochure.html" class="hub-link">brochure</a>
+    <a id="configure-link"  onclick="gtag('event', 'DS7_Configure', { event_label: 'DS7_Configure' })"   href="https://store.dsautomobiles.fr/configurable" class="hub-link separator">configure</a>
+    <a id="test-drive-link" onclick="gtag('event', 'DS7_TestDrive', { event_label: 'DS7_TestDrive' })" href="https://www.dsautomobiles.fr/contact/demandez-un-essai.html" class="hub-link separator">test drive</a>
+    <a id="ar-view-link"    onclick="changeView(this.parentNode, `ar-tutorial`, `DS7_ViewArTutorial`, `btn-Start-the-experience-clicked`)" class="hub-link separator">ar</a>
+  </div>
+  <div id="ar-tutorial" class="hidden">
+      <div id="tutorial-title">USER GUIDE</div>
+      <div id="tutorial-content">
+        <div id="first-step"  class="tutorial-part">
+          <img src="assets/gifs/1.gif" class="tutorial-gif"/>
+          <p class="tutorial-text">Pinch to increase or <br/>decrease the size</p>
+        </div>
+        <div id="second-step" class="tutorial-part hidden-part">
+          <img src="assets/gifs/2.gif" class="tutorial-gif"/>
+          <p class="tutorial-text">Hold and move your finger <br/>to rotate the vehicule</p>
+        </div>
+        <div id="third-step"  class="tutorial-part hidden-part">
+          <img src="assets/gifs/3.gif" class="tutorial-gif"/>
+          <p class="tutorial-text">Click on this button to <br/>project the car in your <br/>environement</p>
+        </div>
+      </div>
+      <button id="continueToModelView" class="navButton" onclick="changeView(this.parentNode, 'modelViewer', 'DS7_StartArExperience', 'btn-Continue-clicked')">
+        <img src="assets/en/buttons/continue.png" />
+      </button>
+    </div>
+  </div>
+
+  <!--
+  <model-viewer
+    id="modelViewer"
+    class="none"
+    src="models-test/ds14.glb"
+    ios-src="models-test/ds14-ios.usdz"
+
+    environment-image="neutral" auto-rotate camera-controls
+    ar ar-modes="scene-viewer quick-look"
+    shadow-intensity="3"
+  >
+      <button id="arBtn" slot="ar-button" onclick="gtag('event', 'DS7_SeeCarInAR', { event_label: 'DS7_SeeCarInAR' })">
+          <img src="assets/en/buttons/ar.png" /> 
+      </button>
+      <button slot="ar-failure">
+          AR is not tracking !
+      </button>
+      <div class="ios-button">
+          <a rel="ar" id="ar-link" href="models-test/ds14-ios.usdz#custom=https://ds.reality-xr.com/ds7/ios_discover_moreee.html">
+              <img />
+              <button onclick="gtag('event', 'DS7_SeeCarInAR', { event_label: 'DS7_SeeCarInAR' })" style="display: flex; justify-content:center; align-items:center; border: 1px solid #d4d4d4; width: 200px; background: white; color: #4285F4; border-radius: 40px; padding: 10px 20px; height: 43px; z-index: 1; position: absolute; bottom: 15px;font-size: 16px;font-weight: 500;">
+                  <svg id="Calque_1" width="17" height="17" style="margin-right: 7.5px" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.17 22.18"><defs><style>.cls-1{fill:#4285F4;}</style></defs><path class="cls-1" d="M1.32,21.59c0-.42,0-.84,0-1.26a.63.63,0,0,1,.65-.7.62.62,0,0,1,.63.7q0,.84,0,1.68c0,.2,0,.27.27.27.54,0,1.09,0,1.64,0a.61.61,0,0,1,.69.64.63.63,0,0,1-.7.64c-.83,0-1.65,0-2.47,0a.64.64,0,0,1-.71-.73C1.31,22.42,1.32,22,1.32,21.59Z" transform="translate(-1.31 -1.39)"/><path class="cls-1" d="M1.32,3.35c0-.42,0-.84,0-1.26A.64.64,0,0,1,2,1.39c.83,0,1.66,0,2.49,0A.64.64,0,0,1,5.2,2a.62.62,0,0,1-.7.64H2.92c-.24,0-.33,0-.32.3,0,.54,0,1.08,0,1.62s-.25.73-.64.72S1.32,5,1.32,4.58,1.32,3.76,1.32,3.35Z" transform="translate(-1.31 -1.39)"/><path class="cls-1" d="M23.48,3.35c0,.43,0,.85,0,1.27a.64.64,0,1,1-1.28,0c0-.54,0-1.09,0-1.64,0-.23,0-.31-.29-.31-.54,0-1.07,0-1.61,0A.62.62,0,0,1,19.6,2a.64.64,0,0,1,.7-.65c.83,0,1.67,0,2.5,0a.64.64,0,0,1,.68.7C23.49,2.51,23.48,2.93,23.48,3.35Z" transform="translate(-1.31 -1.39)"/><path class="cls-1" d="M23.48,21.62c0,.42,0,.84,0,1.26a.63.63,0,0,1-.67.68c-.85,0-1.7,0-2.56,0a.63.63,0,0,1-.65-.66.61.61,0,0,1,.65-.62c.53,0,1.06,0,1.58,0,.32,0,.39-.09.38-.39,0-.51,0-1,0-1.55a.64.64,0,1,1,1.28,0C23.49,20.77,23.48,21.19,23.48,21.62Z" transform="translate(-1.31 -1.39)"/><path class="cls-1" d="M22.09,12.48c0-1.68,0-3.36,0-5a.84.84,0,0,0-.47-.82q-4.36-2.52-8.72-5a.92.92,0,0,0-1,0Q7.53,4.12,3.17,6.63a.84.84,0,0,0-.47.79c0,3.37,0,6.75,0,10.12a.78.78,0,0,0,.43.77C6.06,20,9,21.68,11.89,23.38a.92.92,0,0,0,1,0q4.35-2.53,8.71-5.06a.84.84,0,0,0,.47-.81C22.08,15.83,22.09,14.15,22.09,12.48Zm-10.33,9v.37l-7.1-4.12,2-1.13,3.4-2a.67.67,0,0,0,.34-.95.68.68,0,0,0-1-.17l-5,2.86a.89.89,0,0,1-.38.17V8.41l1.8,1,5.67,3.25a.48.48,0,0,1,.3.49Q11.76,17.31,11.76,21.43Zm.84-9.81a.33.33,0,0,1-.37,0L4.81,7.37l-.14-.1,6.71-3.89c.34-.2.68-.53,1-.53s.68.33,1,.53l6.73,3.9L15.56,9.92Zm8.21,4.89a.78.78,0,0,1-.4-.18l-5-2.85a.67.67,0,0,0-1,.18.68.68,0,0,0,.36.95l5,2.89.31.18-7,4.09a.32.32,0,0,1-.05-.26V13.13a.39.39,0,0,1,.19-.39l7.43-4.25.15-.07Z" transform="translate(-1.31 -1.39)"/></svg>
+                  See the car in AR
+              </button>
+          </a>
+      </div>
+  </model-viewer>
+  -->
+  <body>
+    <model-viewer 
+      id="modelViewer"
+      class="none"
+      src="https://devxr.fr/peugeot/models/glb/D85_1.glb" 
+      poster="https://devxr.fr/peugeot/models/usdz/D85_1.usdz" 
+      shadow-intensity="1" 
+      ar 
+      camera-controls 
+      tone-mapping="neutral"
+      touch-action="pan-y" 
+      exposure="1"
+      environment-image="neutral"
+      alt="A 3D model carousel for Peugeot"
+      camera-orbit="0deg 80deg 3m" 
+    >
+
+      <button slot="ar-button" id="ar-button">
+        <img src="https://devxr.fr/peugeot/assets/en/buttons/ar.png" alt="">
+      </button>
+    
+      <div id="ar-prompt">
+          <!-- <img src="../../assets/hand.png"> -->
+      </div>
+    
+      <button id="ar-failure">
+          AR is not tracking!
+      </button>
+    
+      <div class="slider">
+          <div class="slides">
+            <button class="slide selected" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
+            <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
+            <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
+            <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
+            <button class="slide" onclick="changeModel(this, 'ds14')" style="background-image: url('https://devxr.fr/peugeot/assets/images/ds14.png');"></button>
+          </div>
+      </div>
+    </model-viewer>
+  <!-- model-viewer -->
+  <script>
+    dataLayer = [];
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX25PNT');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX25PNT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDJDE5T8BL"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GDJDE5T8BL');
+  </script>
+  <script>
+    // Hide AR button if not possible
+    /*document.addEventListener("DOMContentLoaded", () => {
+      const arButton = document.getElementById('ar-button');
+      const isARSupported = 'xr' in navigator && navigator.xr.isSessionSupported && navigator.xr.isSessionSupported('immersive-ar');
+    
+      if (!isARSupported && arButton) {
+        arButton.style.display = 'none';
+      }
+    }); */
+
+    /* Adjust model-viewer scren size */
+    const adjustModelViewerSize = () => {
+      const modelViewer = document.querySelector("model-viewer");
+      if (modelViewer) {
+        modelViewer.style.height = `${window.innerHeight}px`;
+        modelViewer.style.width = `${window.innerWidth}px`;
+      }
+    };
+  
+    window.addEventListener("resize", adjustModelViewerSize);
+    adjustModelViewerSize();
+
+    const translateXP = () => {
+      // translate onboarding
+      const onboarding = document.getElementById(`onboarding`);
+      const onboardingCTA = onboarding.querySelector(`img`);
+      onboarding.classList.remove(`onboarding-en`);
+      onboarding.classList.add(`onboarding-${lang}`);
+      onboardingCTA.src = onboardingCTA.src.replace(/en/, lang);
+
+      
+      const onboardingAR = document.getElementById(`onboarding-ar`);
+      const onboardingCTAAR = onboarding.querySelector(`img`);
+      onboardingAR.classList.remove(`onboarding-en`);
+      onboardingAR.classList.add(`onboarding-${lang}`);
+      onboardingCTAAR.src = onboardingCTAAR.src.replace(/en/, lang);
+
+      // translate Link hub
+      const configure = document.getElementById(`configure-link`);
+      const brochure = document.getElementById(`brochure-link`);
+      const testDrive = document.getElementById(`test-drive-link`);
+      const arView = document.getElementById(`ar-view-link`);
+
+      configure.innerHTML = content.linkHub.configure.label;
+      configure.href = content.linkHub.configure.link;
+      brochure.innerHTML = content.linkHub.brochure.label;
+      brochure.href = content.linkHub.brochure.link;
+      testDrive.innerHTML = content.linkHub.testDrive.label;
+      testDrive.href = content.linkHub.testDrive.link;
+      arView.innerHTML = content.linkHub.arView;
+
+      // translate tutorial
+      document.getElementById(`tutorial-title`).innerHTML = content.tutorial.title;
+      document.querySelector(`#first-step p`).innerHTML   = content.tutorial.part1;
+      document.querySelector(`#second-step p`).innerHTML  = content.tutorial.part2;
+      document.querySelector(`#third-step p`).innerHTML   = content.tutorial.part3;
+      const tutorialContinue = document.querySelector(`#continueToModelView img`);
+      tutorialContinue.src = tutorialContinue.src.replace(/en/, lang);
+    };
+
+    const changeView = (current, to, gtagEvent, gtagValue) => {
+
+      if (current.id === `ar-tutorial` && to === `modelViewer`) {
+        const modelViewer = document.getElementById("modelViewer");
+        modelViewer.classList.remove("none"); 
+        return openARView();
+      }
+    
+      const targetView = document.getElementById(to);
+      targetView.classList.remove(`hidden`);
+      current.classList.add(`hidden`);
+    
+      if (to === `ar-tutorial`) {
+        setTimeout(() => {
+          document.getElementById(`second-step`).classList.remove(`hidden-part`);
+        }, 1000);
+        setTimeout(() => {
+          document.getElementById(`third-step`).classList.remove(`hidden-part`);
+        }, 2000);
+      }
+      if (to === `linkhub`) {
+        history.pushState({}, ``, `?linkhub`);
+      }
+      if (to === `onboarding-ar`) {
+        // history.pushState({}, ``, `?onboarding-ar`);
+      }
+      if (gtagEvent.length > 0 && gtagValue.length > 0) {
+        gtag('event', gtagEvent, { event_label: gtagEvent });
+      }
+    };
+    
+
+    const isCriOS = () => {
+      if (navigator.userAgent.match('CriOS')) {
+        return true;
+      }
+      return false;
+    }
+
+    const isSafari = () => {
+      if (navigator.userAgent.match('Safari')) {
+        return true;
+      }
+      return false;
+    }
+
+    const isIOS = () => {
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        return true;
+      }
+      return false;
+    }
+
+    const openRedirectPopup = () => {
+      if (isCriOS() || (!isSafari() && isIOS() )) {
+        const redirectPopup = document.querySelector(".redirectPopup");
+        const onBoarding = document.querySelector("#onBoarding");
+        redirectPopup.classList.remove("none");
+        onBoarding.classList.add("disabledPage");
+      }
+    }
+
+    document.onload = translateXP();
+    openRedirectPopup();
+
+    const searchParams = new URLSearchParams(location.search);
+    const isLinkHub = false;
+    if (searchParams.get(`linkhub`) !== null) {
+      changeView(document.getElementById(`onboarding`), `linkhub`, ``, ``);
+    }
+    if (searchParams.get(`onboarding-ar`) !== null) {
+      changeView(document.getElementById(`onboarding`), `onboarding-ar`, ``, ``);
+    }
+
+
+    const iOS = () => {
+      return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+    }
+
+    /// HIDE BUTTONS DEPENDING ON DEVICE
+    /*
+    if (isIOS()) {
+        const buttons = document.querySelectorAll("#modelViewer > *:not(.ios-button)");
+        buttons.forEach((item) => {
+            item.classList.add("none"); 
+        });
+    } else {
+        const iosButton = document.querySelector("#modelViewer .ios-button");
+        iosButton.classList.add("none");
+    }
+    */
+
+    const copyToClipboard = (text) => {
+      navigator.clipboard.writeText(text)
+      .then(() => { console.log(`Link copied to clipboard`); })
+      .catch((err) => { console.log(`There was an error copying the text to clipboard`) });
+    };
+
+    const openARView = () => {
+      if (iOS() === true) {
+        document.getElementById(`ar-link`).click();
+      } else {
+        document.getElementById(`arBtn`).click();
+      }
+
+      setTimeout(() => {
+        changeView(document.getElementById(`ar-tutorial`), `linkhub`, `DS7_StartArExperience`, `btn-Discover-More-clicked`);
+      }, 500)
+    };
+
+    /* Change model */
+    function changeModel(element, modelName) {
+      const modelViewer = document.querySelector("model-viewer");
+      const base = "https://devxr.fr/peugeot/assets/models/glb/" + modelName;
+
+      modelViewer.src = base + '.glb';
+      modelViewer.poster = base + '.usdz';
+
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach((el) => {
+        el.classList.remove("selected");
+      });
+      element.classList.add("selected");
+    }
+
+    document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+      ev.preventDefault();
+    })
+  </script>
+</body>
+</html>
