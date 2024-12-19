@@ -738,24 +738,25 @@ model-viewer[ar-tracking="not-tracking"] > #ar-failure {
 }
 
 .slider {
-    width: fit-content;
-    position: absolute;
-    top: 50%; 
-    right: 7px; 
-    transform: translateY(-50%); 
+    width: 100%;
+    position: fixed;
+    bottom: 5px; 
+    left: 10px; 
     display: flex;
     justify-content: center; 
     align-items: center; 
     flex-direction: column; 
+    overflow-x: scroll;
 }
 
 .slides {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row; 
     overflow-y: auto;
     scroll-snap-type: y mandatory; 
     text-align: center;
     gap: 12px; 
+    margin-left: 4vh;
 }
 
 .slide {
