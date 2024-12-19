@@ -118,11 +118,13 @@
     <model-viewer 
       id="modelViewer"
       class="none"
+      environment-image="https://devxr.fr/peugeot/assets/background/studio_small_08_2k.hdr"
       src="https://devxr.fr/peugeot/assets/models/glb/D85_1.glb" 
       poster="https://devxr.fr/peugeot/assets/models/usdz/D85_1.usdz" 
       shadow-intensity="1" 
       ar 
       camera-controls 
+      environment-image="neutral"
       tone-mapping="neutral"
       touch-action="pan-y" 
       exposure="1"
@@ -130,18 +132,24 @@
       alt="A 3D model carousel for Peugeot"
       camera-orbit="0deg 80deg 3m" 
     >
-
       <button slot="ar-button" id="ar-button">
         <img src="https://devxr.fr/peugeot/assets/en/buttons/ar.png" alt="">
       </button>
     
       <div id="ar-prompt">
-          <!-- <img src="../../assets/hand.png"> -->
+        <!-- <img src="../../assets/hand.png"> -->
       </div>
     
       <button id="ar-failure">
           AR is not tracking!
       </button>
+
+      <div class="animation-container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      
     
       <div class="slider">
           <div class="slides">
@@ -360,24 +368,40 @@
       }, 500)
     };
 
-    /* Change model */
+    
+    const modelViewer = document.querySelector("model-viewer");
+    
+    // Cache les squares loaders
+    function hideSquares() {
+      const container = document.querySelector('.animation-container');
+      setTimeout(() => {
+        container.classList.add('hide-squares');
+      }, 0); 
+    }
+  
+    modelViewer.addEventListener('load', () => {
+      console.log("Le modèle est chargé");
+      hideSquares(); 
+    });
+  
+    // Chargement du model 
     function changeModel(element, modelName) {
-      const modelViewer = document.querySelector("model-viewer");
       const base = "https://devxr.fr/peugeot/assets/models/glb/" + modelName;
-
+      const modelViewer = document.querySelector("model-viewer");
+  
       modelViewer.src = base + '.glb';
       modelViewer.poster = base + '.usdz';
-
+  
       const slides = document.querySelectorAll(".slide");
       slides.forEach((el) => {
         el.classList.remove("selected");
       });
       element.classList.add("selected");
+  
+      const container = document.querySelector('.animation-container');
+      container.classList.remove('hide-squares'); 
     }
-
-    document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
-      ev.preventDefault();
-    })
+    
   </script>
 </body>
 </html>

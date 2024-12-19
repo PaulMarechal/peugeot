@@ -812,3 +812,76 @@ model-viewer > #ar-prompt > img {
 }
 
 #ar-button img{width: 28vh;}
+
+/* Loader */
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;  
+}
+
+.square {
+  width: 3vh;
+  height: 3vh;
+  background-color: #333333;
+  margin: 9px;
+  opacity: 0;  
+  transform: scale(0); 
+  rotate: 45deg;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+@keyframes squareAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes squareDisappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.square:nth-child(1) {
+  animation: squareAppear 1s ease-in-out forwards;
+  animation-delay: 0s; 
+}
+
+.square:nth-child(2) {
+  animation: squareAppear 1s ease-in-out forwards;
+  animation-delay: 1s;  
+}
+
+.square:nth-child(3) {
+  animation: squareAppear 1s ease-in-out forwards;
+  animation-delay: 2s;  
+}
+
+.hide-squares .square {
+  animation: squareDisappear 0.5s ease-out forwards;
+  animation-delay: 0s;  
+}
+
+.hide-squares {
+  display: none;
+  transition: display 0s 0.51s;
+}
