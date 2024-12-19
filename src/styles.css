@@ -800,7 +800,7 @@ model-viewer > #ar-prompt > img {
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    bottom: 2vh;
+    bottom: 14vh;
     padding: 0px 16px 0px 40px;
     font-family: Roboto Regular, Helvetica Neue, sans-serif;
     font-size: 14px;
