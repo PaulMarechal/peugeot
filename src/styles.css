@@ -131,24 +131,27 @@ html, body {
     align-items: center;
     justify-content: center;
 }
-
+/*
 #linkhub #configure-link {
     background-image: url("assets/images/Configure.jpg");
 }
-
+*/
 #linkhub #brochure-link {
-    background-image: url("assets/images/Brochure.jpg");
+    background-image: url("assets/images/brochure_v1.webp");
     background-position: 17% 30%;
 }
 
+#linkhub #ar-view-link {
+    background-image: url("assets/images/realite_augmente_v1.webp");
+    background-position: center top;
+}
+
+/*
 #linkhub #test-drive-link {
     background-image: url("assets/images/TestDrive.jpg");
 }
+*/
 
-#linkhub #ar-view-link {
-    background-image: url("assets/images/AR.jpg");
-    background-position: center top;
-}
 
 #linkhub .hub-link {
     width: 100%;

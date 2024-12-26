@@ -3,18 +3,18 @@ function configEn() {
     name: `en`,
     linkHub: {
       configure: {
-        label: `D85<span>CONFIGURATION</span>`,
+        label: `DS n°8<span>CONFIGURATION</span>`,
         link: `https://www.dsautomobiles.co.uk/ds-store/configurator`,
       },
       brochure: {
-        label: `D85<span>BROCHURE</span>`,
+        label: `DS n°8<span>BROCHURE</span>`,
         link: `https://www.dsautomobiles.co.uk/ds-brochures-and-price-lists`,
       },
       testDrive: {
         label: `Book a<span>TEST DRIVE</span>`,
         link: `https://www.dsautomobiles.co.uk/inside-ds/test-drive-from-your-drive.html`,
       },
-   arView: `D85 in<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>AUGMENTED REALITY</span>`,
+   arView: `DS n°8 in<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>AUGMENTED REALITY</span>`,
     },
     arIosBtn: `See the car in AR`,
     tutorial: {

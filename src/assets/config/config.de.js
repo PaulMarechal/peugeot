@@ -3,18 +3,18 @@ function configDe() {
     name: `de`,
     linkHub: {
       configure: {
-        label: `D85<span>KONFIGURATION</span>`,
+        label: `DS n°8<span>KONFIGURATION</span>`,
         link: `https://www.dsautomobiles.de/content/ds/worldwide/germany/de/`,
       },
       brochure: {
-        label: `D85<span>MODELLÜBERSICHT</span>`,
+        label: `DS n°8<span>MODELLÜBERSICHT</span>`,
         link: `https://www.dsautomobiles.de/modelle/ds7.html`,
       },
       testDrive: {
         label: `Buchen Sie eine<span>Probefahrt</span>`,
         link: `https://www.dsautomobiles.de/infocenter/probefahrt.html`,
       },
-      arView: `D85 IN DER<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>ERWEITERTEN REALITÄT</span>`,
+      arView: `DS n°8 IN DER<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>ERWEITERTEN REALITÄT</span>`,
     },
     arIosBtn: `AR`,
     tutorial: {

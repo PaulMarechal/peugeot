@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>DS7 AR</title>
+  <title>DS n°8</title>
   <link rel="icon" href="faviconds.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css" type="text/css">
   <script type="text/javascript" src="assets/config/config.en.js"></script>
@@ -60,9 +60,9 @@
   </div>
   <div id="linkhub" class="hidden">
     <a id="brochure-link"   onclick="gtag('event', 'DS7_Brochure',  { event_label: 'DS7_Brochure' })"     href="https://www.dsautomobiles.fr/outils/demandez-une-brochure.html" class="hub-link">brochure</a>
-    <a id="configure-link"  onclick="gtag('event', 'DS7_Configure', { event_label: 'DS7_Configure' })"   href="https://store.dsautomobiles.fr/configurable" class="hub-link separator">configure</a>
-    <a id="test-drive-link" onclick="gtag('event', 'DS7_TestDrive', { event_label: 'DS7_TestDrive' })" href="https://www.dsautomobiles.fr/contact/demandez-un-essai.html" class="hub-link separator">test drive</a>
     <a id="ar-view-link"    onclick="changeView(this.parentNode, `ar-tutorial`, `DS7_ViewArTutorial`, `btn-Start-the-experience-clicked`)" class="hub-link separator">ar</a>
+    <!-- <a id="configure-link"  onclick="gtag('event', 'DS7_Configure', { event_label: 'DS7_Configure' })"   href="https://store.dsautomobiles.fr/configurable" class="hub-link separator">configure</a> -->
+    <!-- <a id="test-drive-link" onclick="gtag('event', 'DS7_TestDrive', { event_label: 'DS7_TestDrive' })" href="https://www.dsautomobiles.fr/contact/demandez-un-essai.html" class="hub-link separator">test drive</a> -->
   </div>
   <div id="ar-tutorial" class="hidden">
       <div id="tutorial-title">USER GUIDE</div>
@@ -119,8 +119,8 @@
       id="modelViewer"
       class="none"
       environment-image="https://devxr.fr/peugeot/assets/background/studio_small_08_2k.hdr"
-      src="https://devxr.fr/peugeot/assets/models/glb/D85_2.glb" 
-      poster="https://devxr.fr/peugeot/assets/models/usdz/D85_2.usdz" 
+      src="https://devxr.fr/peugeot/assets/models/glb/D85_v18.glb" 
+      poster="https://devxr.fr/peugeot/assets/models/usdz/D85_v18.usdz" 
       shadow-intensity="1" 
       ar 
       camera-controls 
@@ -155,7 +155,7 @@
     
       <div class="slider">
           <div class="slides">
-            <button class="slide selected" onclick="changeModel(this, 'D85_2')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85_poster.webp');"></button>
+            <button class="slide selected" onclick="changeModel(this, 'D85_v18')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85_poster.webp');"></button>
             <!--
             <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
             <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
@@ -231,17 +231,17 @@
       onboardingCTAAR.src = onboardingCTAAR.src.replace(/en/, lang);
 
       // translate Link hub
-      const configure = document.getElementById(`configure-link`);
-      const brochure = document.getElementById(`brochure-link`);
-      const testDrive = document.getElementById(`test-drive-link`);
+      // const configure = document.getElementById(`configure-link`); -->
+      // const testDrive = document.getElementById(`test-drive-link`); -->
       const arView = document.getElementById(`ar-view-link`);
+      const brochure = document.getElementById(`brochure-link`);
 
-      configure.innerHTML = content.linkHub.configure.label;
-      configure.href = content.linkHub.configure.link;
+      // configure.innerHTML = content.linkHub.configure.label;
+      // configure.href = content.linkHub.configure.link;
+      // testDrive.innerHTML = content.linkHub.testDrive.label;
+      // testDrive.href = content.linkHub.testDrive.link;
       brochure.innerHTML = content.linkHub.brochure.label;
       brochure.href = content.linkHub.brochure.link;
-      testDrive.innerHTML = content.linkHub.testDrive.label;
-      testDrive.href = content.linkHub.testDrive.link;
       arView.innerHTML = content.linkHub.arView;
 
       // translate tutorial

@@ -3,11 +3,11 @@ function configTr() {
     name: `tr`,
     linkHub: {
       configure: {
-        label: `D85<span>KONFİGÜRATÖR</span>`,
+        label: `DS n°8<span>KONFİGÜRATÖR</span>`,
         link: `https://www.dsautomobiles.com.tr/modeller/ds7/konfigurator.html/Finition`,
       },
       brochure: {
-        label: `D85<span>BROŞÜR</span>`,
+        label: `DS n°8<span>BROŞÜR</span>`,
         link: `https://www.dsautomobiles.com.tr/content/dam/ds/turkey/brosurler/DS-7_.pdf`,
       },
       testDrive: {
