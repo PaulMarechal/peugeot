@@ -123,6 +123,8 @@
       poster="https://devxr.fr/peugeot/assets/models/usdz/D85_v20.usdz" 
       shadow-intensity="1" 
       ar 
+      disable-tap
+      disable-pan
       environment-image="neutral"
       tone-mapping="neutral"
       touch-action="pan-y" 
@@ -130,10 +132,12 @@
       alt="A 3D model carousel for Peugeot"
       camera-controls
       interaction-prompt="none"
-      disable-zoom
       interaction-policy="allow-when-focused"
-      ar-scale="20%"
-      camera-orbit="-89.39deg 88.72deg 5m"
+      ar-scale="20"
+      camera-orbit="-56.62deg 71.91deg 10m"
+      min-camera-orbit="auto auto 5m"
+      max-camera-orbit="auto auto 15m"
+      camera-target="0m 0m 0m"
     >
       <button slot="ar-button" id="ar-button">
         <img src="https://devxr.fr/peugeot/assets/en/buttons/ar.png" alt="">
