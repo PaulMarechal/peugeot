@@ -7,7 +7,7 @@ function configDe() {
         link: `https://www.dsautomobiles.de/content/ds/worldwide/germany/de/`,
       },
       brochure: {
-        label: `DS n°8<span>MODELLÜBERSICHT</span>`,
+        label: `BLEIBEN<span>INFORMIERT</span>`,
         link: `https://www.dsautomobiles.de/modelle/ds7.html`,
       },
       testDrive: {

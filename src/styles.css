@@ -1,6 +1,6 @@
 @font-face {
     font-family: "DsBold";
-    src: url('./assets/fonts/DSAutomobiles-Bold.otf') format("opentype");
+    src: url('./assets/fonts/DSAutomobiles_Bold.ttf') format("opentype");
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "DsRegular";
-    src: url('./assets/fonts/DSAutomobiles-Regular.otf') format("opentype");
+    src: url('./assets/fonts/DSAutomobiles_Regular.ttf') format("opentype");
 }
 
 html, body {
@@ -104,25 +104,25 @@ html, body {
 }
 
 .onboardingscreen.onboarding-en {
-    background-image: url("assets/en/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/en/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-fr {
-    background-image: url("assets/fr/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/fr/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-es {
-    background-image: url("assets/es/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/es/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-el {
-    background-image: url("assets/el/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/el/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-tr {
-    background-image: url("assets/tr/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/tr/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-it {
-    background-image: url("assets/it/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/it/backgrounds/Dsn8_BG.webp");
 }
 .onboardingscreen.onboarding-de {
-    background-image: url("assets/de/backgrounds/Splash_V2.jpg");
+    background-image: url("assets/de/backgrounds/Dsn8_BG.webp");
 }
 
 #linkhub {

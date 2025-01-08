@@ -59,8 +59,8 @@
     </button>
   </div>
   <div id="linkhub" class="hidden">
-    <a id="brochure-link"   onclick="gtag('event', 'DS7_Brochure',  { event_label: 'DS7_Brochure' })"     href="https://www.dsautomobiles.fr/outils/demandez-une-brochure.html" class="hub-link">brochure</a>
-    <a id="ar-view-link"    onclick="changeView(this.parentNode, `ar-tutorial`, `DS7_ViewArTutorial`, `btn-Start-the-experience-clicked`)" class="hub-link separator">ar</a>
+    <a id="ar-view-link"    onclick="changeView(this.parentNode, `ar-tutorial`, `DS7_ViewArTutorial`, `btn-Start-the-experience-clicked`)" class="hub-link">ar</a>
+    <a id="brochure-link"   onclick="gtag('event', 'DS7_Brochure',  { event_label: 'DS7_Brochure' })"     href="https://www.dsautomobiles.fr/outils/demandez-une-brochure.html" class="hub-link separator">brochure</a>
     <!-- <a id="configure-link"  onclick="gtag('event', 'DS7_Configure', { event_label: 'DS7_Configure' })"   href="https://store.dsautomobiles.fr/configurable" class="hub-link separator">configure</a> -->
     <!-- <a id="test-drive-link" onclick="gtag('event', 'DS7_TestDrive', { event_label: 'DS7_TestDrive' })" href="https://www.dsautomobiles.fr/contact/demandez-un-essai.html" class="hub-link separator">test drive</a> -->
   </div>
@@ -119,20 +119,21 @@
       id="modelViewer"
       class="none"
       environment-image="https://devxr.fr/peugeot/assets/background/studio_small_08_2k.hdr"
-      src="https://devxr.fr/peugeot/assets/models/glb/D85_v18.glb" 
-      poster="https://devxr.fr/peugeot/assets/models/usdz/D85_v18.usdz" 
+      src="https://devxr.fr/peugeot/assets/models/glb/D85_v20.glb" 
+      poster="https://devxr.fr/peugeot/assets/models/usdz/D85_v20.usdz" 
       shadow-intensity="1" 
       ar 
-      camera-controls 
       environment-image="neutral"
       tone-mapping="neutral"
       touch-action="pan-y" 
       exposure="1"
-      environment-image="neutral"
       alt="A 3D model carousel for Peugeot"
-      camera-orbit="0deg 80deg 3m" 
-      default-exit-webxr-ar-button
+      camera-controls
+      interaction-prompt="none"
+      disable-zoom
+      interaction-policy="allow-when-focused"
       ar-scale="20%"
+      camera-orbit="-89.39deg 88.72deg 5m"
     >
       <button slot="ar-button" id="ar-button">
         <img src="https://devxr.fr/peugeot/assets/en/buttons/ar.png" alt="">
@@ -155,7 +156,7 @@
     
       <div class="slider">
           <div class="slides">
-            <button class="slide selected" onclick="changeModel(this, 'D85_v18')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85_poster.webp');"></button>
+            <button class="slide selected" onclick="changeModel(this, 'D85_v20')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85_poster.webp');"></button>
             <!--
             <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>
             <button class="slide" onclick="changeModel(this, 'D85_1')" style="background-image: url('https://devxr.fr/peugeot/assets/images/D85.png');"></button>

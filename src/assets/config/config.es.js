@@ -7,7 +7,7 @@ function configEs() {
         link: `https://www.dsautomobiles.es/store/configurador.html?lcdv=1sd4a5lnp1b0a011`,
       },
       brochure: {
-        label: `DS n°8<span>CATÁLOGO</span>`,
+        label: `SIGUE<span>INFORMADO</span>`,
         link: `https://www.dsautomobiles.es/contacto/solicitud-de-catalogo.html`,
       },
       testDrive: {

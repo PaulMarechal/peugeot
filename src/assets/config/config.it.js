@@ -7,11 +7,11 @@ function configIt() {
         link: `https://store.dsautomobiles.it/configurable`,
       },
       brochure: {
-        label: `DS n°8<span>PRESENTAZIONE</span>`,
+        label: `RIMANERE<span>INFORMATI</span>`,
         link: `https://www.dsautomobiles.it/modelli-ds/ds-7.html`,
       },
       testDrive: {
-        label: `PRENOTA UN<span>TEST DRIVE</span>`,
+        label: `<span>TEST DRIVE</span>`,
         link: `https://landingform.dsautomobiles.it/testdrive_qrcode/`,
       },
       arView: `DS n°8 NELLA<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALTÀ AUMENTATA</span>`,

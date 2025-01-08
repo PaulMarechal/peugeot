@@ -7,7 +7,7 @@ function configEl() {
         link: `https://www.dsautomobiles.co.uk/ds-store/configurator`,
       },
       brochure: {
-        label: `<span>ΤΑ ΜΥΣΤΙΚΑ ΤΟΥ</span>D85`,
+        label: `ΠΑΡΑΜΕΙΝΕΤΕ<span>ΕΝΗΜΕΡΩΜΕΝΟΙ</span>D85`,
         link: `https://www.dsautomobiles.co.uk/ds-brochures-and-price-lists`,
       },
       testDrive: {

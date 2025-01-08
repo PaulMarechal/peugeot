@@ -7,8 +7,8 @@ function configFr() {
         link: `https://www.dsautomobiles.fr/ds-store/configurateur.html	`,
       },
       brochure: {
-        label: `DS n°8<span>BROCHURE</span>`,
-        link: `https://www.dsautomobiles.fr/contact/demandez-une-brochure.html`,
+        label: `RESTER<span>INFORMÉ</span>`,
+        link: `https://www.dsautomobiles.fr/modeles-ds/dsn8.html`,
       },
       testDrive: {
         label: `Réservez un<span>ESSAI</span>`,
