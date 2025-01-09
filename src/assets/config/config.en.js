@@ -3,7 +3,7 @@ function configEn() {
     name: `en`,
     linkHub: {
       configure: {
-        label: `DS n°8<span>CONFIGURATION</span>`,
+        label: `DS N°8<span>CONFIGURATION</span>`,
         link: `https://www.dsautomobiles.co.uk/ds-store/configurator`,
       },
       brochure: {
@@ -14,7 +14,7 @@ function configEn() {
         label: `Book a<span>TEST DRIVE</span>`,
         link: `https://www.dsautomobiles.co.uk/inside-ds/test-drive-from-your-drive.html`,
       },
-   arView: `DS n°8 in<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>AUGMENTED REALITY</span>`,
+   arView: `DS N°8 in<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>AUGMENTED REALITY</span>`,
     },
     arIosBtn: `See the car in AR`,
     tutorial: {

@@ -3,7 +3,7 @@ function configIt() {
     name: `it`,
     linkHub: {
       configure: {
-        label: `DS n°8<span>CONFIGURAZIONE</span>`,
+        label: `DS N°8<span>CONFIGURAZIONE</span>`,
         link: `https://store.dsautomobiles.it/configurable`,
       },
       brochure: {
@@ -14,7 +14,7 @@ function configIt() {
         label: `<span>TEST DRIVE</span>`,
         link: `https://landingform.dsautomobiles.it/testdrive_qrcode/`,
       },
-      arView: `DS n°8 NELLA<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALTÀ AUMENTATA</span>`,
+      arView: `DS N°8 NELLA<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALTÀ AUMENTATA</span>`,
     },
     arIosBtn: `AR`,
     tutorial: {

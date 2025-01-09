@@ -3,7 +3,7 @@ function configDe() {
     name: `de`,
     linkHub: {
       configure: {
-        label: `DS n°8<span>KONFIGURATION</span>`,
+        label: `DS N°8<span>KONFIGURATION</span>`,
         link: `https://www.dsautomobiles.de/content/ds/worldwide/germany/de/`,
       },
       brochure: {
@@ -14,7 +14,7 @@ function configDe() {
         label: `Buchen Sie eine<span>Probefahrt</span>`,
         link: `https://www.dsautomobiles.de/infocenter/probefahrt.html`,
       },
-      arView: `DS n°8 IN DER<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>ERWEITERTEN REALITÄT</span>`,
+      arView: `DS N°8 IN DER<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>ERWEITERTEN REALITÄT</span>`,
     },
     arIosBtn: `AR`,
     tutorial: {

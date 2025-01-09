@@ -3,7 +3,7 @@ function configEs() {
     name: `es`,
     linkHub: {
       configure: {
-        label: `DS n°8<span>CONFIGURACIÓN</span>`,
+        label: `DS N°8<span>CONFIGURACIÓN</span>`,
         link: `https://www.dsautomobiles.es/store/configurador.html?lcdv=1sd4a5lnp1b0a011`,
       },
       brochure: {
@@ -14,7 +14,7 @@ function configEs() {
         label: `Reservar una<span>PRUEBA DE CONDUCCIÓN</span>`,
         link: `https://www.dsautomobiles.es/herramientas/solicite-una-prueba.html`,
       },
-      arView: `DS n°8 en<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALIDAD AUMENTADA</span>`,
+      arView: `DS N°8 en<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALIDAD AUMENTADA</span>`,
     },
     arIosBtn: `Ver el coche en AR`,
     tutorial: {
