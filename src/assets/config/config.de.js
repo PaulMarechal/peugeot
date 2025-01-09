@@ -14,7 +14,7 @@ function configDe() {
         label: `Buchen Sie eine<span>Probefahrt</span>`,
         link: `https://www.dsautomobiles.de/infocenter/probefahrt.html`,
       },
-      arView: `DS N°8 IN DER<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>ERWEITERTEN REALITÄT</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 in der<span>ERWEITERTEN REALITÄT</span></div></div>`,
     },
     arIosBtn: `AR`,
     tutorial: {

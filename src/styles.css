@@ -889,6 +889,20 @@ model-viewer > #ar-prompt > img {
   transition: display 0s 0.51s;
 }
 
+/* AR text */
+.display_text_ar_div{
+    display: inline-flex;
+}
+
+.display_img_ar{
+    width: 40px; 
+    margin-right: 10px;
+}
+
+.display_text_ar{
+    text-align: center;
+}
+
 /* Bouton 'Exit AR' */
 model-viewer::part(default-exit-webxr-ar-button) {
     position: absolute;

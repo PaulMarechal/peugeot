@@ -14,7 +14,7 @@ function configIt() {
         label: `<span>TEST DRIVE</span>`,
         link: `https://landingform.dsautomobiles.it/testdrive_qrcode/`,
       },
-      arView: `DS N°8 NELLA<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALTÀ AUMENTATA</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 nella<span>REALTÀ AUMENTATA</span></div></div>`,
     },
     arIosBtn: `AR`,
     tutorial: {

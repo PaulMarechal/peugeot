@@ -14,7 +14,7 @@ function configEn() {
         label: `Book a<span>TEST DRIVE</span>`,
         link: `https://www.dsautomobiles.co.uk/inside-ds/test-drive-from-your-drive.html`,
       },
-   arView: `DS N°8 in<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>AUGMENTED REALITY</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 in<span>AUGMENTED REALITY</span></div></div>`,
     },
     arIosBtn: `See the car in AR`,
     tutorial: {

@@ -14,7 +14,7 @@ function configFr() {
         label: `Réservez un<span>ESSAI</span>`,
         link: `https://www.dsautomobiles.fr/contact/demandez-un-essai.html`,
       },
-      arView: `DS N°8 en<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>RÉALITE AUGMENTÉE</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 en<span>RÉALITE AUGMENTÉE</span></div></div>`,
     },
     arIosBtn: `Voir la voiture en AR`,
     tutorial: {

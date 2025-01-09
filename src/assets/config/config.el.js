@@ -14,7 +14,7 @@ function configEl() {
         label: `Κλείσε ένα<span>TEST DRIVE</span>`,
         link: `https://forms.dsautomobiles.co.uk/ds/test-drive?&_ga=2.107661056.322930098.1629723985-321962218.1629723985`,
       },
-      arView: `See the car<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>IN AR</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 in<span>AUGMENTED REALITY</span></div></div>`,
     },
     arIosBtn: `Δείτε το αυτοκίνητο στο AR`,
     tutorial: {

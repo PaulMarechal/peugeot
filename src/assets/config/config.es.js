@@ -14,7 +14,7 @@ function configEs() {
         label: `Reservar una<span>PRUEBA DE CONDUCCIÓN</span>`,
         link: `https://www.dsautomobiles.es/herramientas/solicite-una-prueba.html`,
       },
-      arView: `DS N°8 en<span><img src="assets/images/ar_icon.svg" alt="AR icon"/>REALIDAD AUMENTADA</span>`,
+      arView: `<div class="display_text_ar_div"><div><img src="assets/images/ar_icon.svg" class="display_img_ar" alt="AR icon"/></div><div class="display_text_ar">DS N°8 en<span>REALIDAD AUMENTADA</span></div></div>`,
     },
     arIosBtn: `Ver el coche en AR`,
     tutorial: {
