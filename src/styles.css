@@ -892,11 +892,14 @@ model-viewer > #ar-prompt > img {
 /* AR text */
 .display_text_ar_div{
     display: inline-flex;
+    top: 5vh;
+    position: absolute;
 }
 
 .display_img_ar{
     width: 40px; 
     margin-right: 10px;
+    margin-top: 6px;
 }
 
 .display_text_ar{
