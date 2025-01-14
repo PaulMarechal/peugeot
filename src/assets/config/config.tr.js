@@ -7,7 +7,7 @@ function configTr() {
         link: `https://www.dsautomobiles.com.tr/modeller/ds7/konfigurator.html/Finition`,
       },
       brochure: {
-        label: `DS n°8<span>BROŞÜR</span>`,
+        label: `<div class="stay_informed_text">DS n°8<span>BROŞÜR</span></div>`,
         link: `https://www.dsautomobiles.com.tr/content/dam/ds/turkey/brosurler/DS-7_.pdf`,
       },
       testDrive: {

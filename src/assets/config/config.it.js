@@ -7,7 +7,7 @@ function configIt() {
         link: `https://store.dsautomobiles.it/configurable`,
       },
       brochure: {
-        label: `RIMANERE<span>INFORMATI</span>`,
+        label: `<div class="stay_informed_text">RIMANERE<span>INFORMATI</span><div>`,
         link: `https://www.dsautomobiles.it/modelli-ds/ds-7.html`,
       },
       testDrive: {

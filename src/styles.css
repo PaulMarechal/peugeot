@@ -923,3 +923,9 @@ model-viewer::part(default-exit-webxr-ar-button) {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
+
+.stay_informed_text{
+    bottom: 6vh;
+    position: absolute;
+    text-align: center;
+}
